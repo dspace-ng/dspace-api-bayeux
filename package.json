@@ -2,9 +2,9 @@
   "name": "dspace-api-bayeux",
   "version": "0.0.1",
   "description": "HTTP PubSub based on Bayeux Protocol",
-  "main": "index.js",
+  "main": "bayeux.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -16,12 +16,11 @@
     "PubSub",
     "Bayeux"
   ],
-  "author": "",
-  "contributors": [
-    {
+  "author": {
       "name": "☮ elf Pavlik ☮",
       "email": "perpetual-tripper@wwelves.org"
-    },
+  },
+  "contributors": [
     {
       "name": "Niklas E. Cathor",
       "email": "nilclass@riseup.net"
@@ -36,6 +35,12 @@
     "grunt-contrib-connect": "~0.5.0",
     "grunt-contrib-jshint": "~0.6.4",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-markdown": "~0.4.0"
+    "grunt-markdown": "~0.4.0",
+    "grunt-notify": "~0.2.13",
+    "karma": "~0.10.2",
+    "karma-mocha": "~0.1.0",
+    "karma-sinon-chai": "~0.1.1",
+    "karma-growler-reporter": "0.0.1",
+    "karma-browserify": "0.0.5"
   }
 }
