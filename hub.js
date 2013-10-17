@@ -1,3 +1,4 @@
+var Faye = require('faye');
 var BayeuxChannel = require('./channel');
 
 var BayeuxHub = function(url){
