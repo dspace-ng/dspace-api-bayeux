@@ -1,6 +1,7 @@
 var Faye = require('faye');
 var BayeuxHub = require('../hub');
 var BayeuxChannel = require('../channel');
+var BayeuxGeolocationChannel = require('../geolocation');
 
 describe('BayeuxHub', function(){
 
@@ -33,6 +34,23 @@ describe('BayeuxHub', function(){
 
     it('should keep reference to itself in a channel', function(){
       var channel = hub.getChannel(path);
+      expect(channel.hub).to.equal(hub);
+    });
+
+  });
+
+  describe('getGeolocationChannel', function(){
+
+    var hub = new BayeuxHub(url);
+    var path = '/test';
+
+    it('should return an instance of BayeuxGeolocationChannel', function(){
+      var channel = hub.getGeolocationChannel(path);
+      expect(channel).to.be.an.instanceOf(BayeuxGeolocationChannel);
+    });
+
+    it('should keep reference to itself in a channel', function(){
+      var channel = hub.getGeolocationChannel(path);
       expect(channel.hub).to.equal(hub);
     });
 

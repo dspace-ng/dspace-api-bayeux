@@ -14,6 +14,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'test/shims/zepto.js',
+      'test/shims/lodash.js',
+      'test/shims/backbone.js',
       'test/**/*Spec.js'
     ],
 
