@@ -17,12 +17,16 @@ var BayeuxChannel = function(path, hub){
   this.hub = hub;
 
   // delegate publishing to hub.client
-  this.publish = function(message){
+  this.pub = function(message){
+    // in case we publish models or collections
+    if(message.toJSON) {
+      message = message.toJSON();
+    }
     this.hub.client.publish(path, message);
   };
 
   // delegate subscribing to hub.client
-  this.subscribe = function(callback){
+  this.sub = function(callback){
     this.hub.client.subscribe(path, callback);
   };
 };
