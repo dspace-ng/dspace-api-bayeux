@@ -5,7 +5,7 @@ var BayeuxChannel = function(path, hub){
     throw 'absolute path please!';
   }
 
-  // expects absolute path
+  // expects hub
   if(!hub){
     throw 'i need hub!';
   }

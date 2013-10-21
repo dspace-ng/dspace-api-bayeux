@@ -19,6 +19,8 @@ var BayeuxGeolocationChannel = function(path, hub){
   // easy reference to hub
   this.hub = hub;
 
+  // wraps hub publish to create polymorphic interface
+  // with navigator.geolocatin
   this.hub.client.subscribe(path, function(message){
     this.trigger('position', message);
   }.bind(this));
